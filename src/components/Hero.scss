@@ -1,0 +1,17 @@
+.hero-section {
+  margin-left: 2rem;
+}
+
+.hero-section__channel {
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+.hero-section__likes,
+.hero-section__views,
+.hero-section__timestamp {
+  color: #afafaf;
+}
+.hero-section__container {
+  display: flex;
+  justify-content: space-between;
+}
