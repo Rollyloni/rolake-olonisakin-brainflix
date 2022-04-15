@@ -1,37 +1,20 @@
-import React, { Component } from "react";
-import dataArray from "./assets/data/video-details.json";
+import "../components/Aside.scss";
+import CardDetails from "./CardDetails";
 
-const dataObject = dataArray.map((object) => {
-  return {
-    titles: object.title,
-    channels: object.channel,
-    images: object.image,
-  };
-});
-
-class Aside extends Component {
-  state = {
-    card: dataObject,
-  };
-  render() {
-    const cardItem = dataArray.map((object) => {
-      return (
-        <article key={object.id}>
-          <video width="100%" height="40%" controls poster={object.image} />
-          <source src={object.video} type="video/mp4" />
-          <h3>{object.title}</h3>
-          <p>{object.channel}</p>
-        </article>
-      );
-    });
-
+const Aside = (props) => {
+  const videoList = props.selectedPage.map((object) => {
     return (
-      <div>
-        <h2>NEXT VIDEOS</h2>
-        <section>{cardItem}</section>
-      </div>
+      <CardDetails
+        key={object.id}
+        id={object.id}
+        image={object.image}
+        title={object.title}
+        channel={object.channel}
+        onCardClick={props.onCardClick}
+      ></CardDetails>
     );
-  }
-}
+  });
+  return <section>{videoList}</section>;
+};
 
 export default Aside;
