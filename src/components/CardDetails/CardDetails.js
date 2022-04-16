@@ -1,4 +1,5 @@
 import React from "react";
+import "../CardDetails/CardDetails.scss";
 
 const CardDetails = (props) => {
   const { image, title, id, channel, onCardClick } = props;
@@ -7,10 +8,12 @@ const CardDetails = (props) => {
   };
 
   return (
-    <article onClick={handleClick}>
+    <article onClick={handleClick} className="card">
       <img className="card__images" src={image} alt="video avatar" />
-      <h3>{title} </h3>
-      <p>{channel} </p>
+      <div className="card__div">
+        <p className="card__title">{title} </p>
+        <p className="card__channel">{channel} </p>
+      </div>
     </article>
   );
 };

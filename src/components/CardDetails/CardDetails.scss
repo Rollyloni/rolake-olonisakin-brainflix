@@ -1,0 +1,25 @@
+.card {
+  margin-left: 1rem;
+  display: flex;
+}
+
+.card__images {
+  margin: 1rem;
+  width: 32%;
+  height: 10rem;
+  border-radius: 0.5rem;
+}
+.card__title {
+  font-weight: bold;
+  font-size: 1.3rem;
+  line-height: 1.8rem;
+}
+.card__channel {
+  font-size: 1.3rem;
+  line-height: 1.8rem;
+}
+.card__div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}

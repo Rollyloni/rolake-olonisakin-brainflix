@@ -1,36 +1,36 @@
 import React from "react";
 import avatar from "../assets/Images/Mohan-muruge.jpg";
+import "../Comments/Comments.scss";
+import commentIcon from "../assets/Icons/add_comment.svg";
 
 const Comments = (props) => {
   const commentArray = props.comments.map((comment, index) => {
     return (
-      <section key={index}>
-        <div>
-          <img src={avatar} alt="comment avatar"></img>
-          <p>{comment.name}</p>
-          <p>{comment.timestamp} </p>
+      <section key={index} className="comment-section__container">
+        <img
+          src={avatar}
+          alt="comment avatar"
+          className="comment-section__avatar"
+        ></img>
+        <div className="comment-section__div">
+          <p className="comment-section__name">{comment.name}</p>
+          <p className="comment-section__date">{comment.timestamp} </p>
         </div>
-        <p>{comment.comment} </p>
+        <p className="comment-section__text">{comment.comment} </p>
       </section>
     );
   });
 
   return (
     <div>
+      <p>3 Comments</p>
       <form className="form__name">
-        <p className="comment-section__header">Join the Conversation</p>
+        <p className="comment-section__header">JOIN THE CONVERSATION</p>
         <img
-          className="comment-section__avatar"
-          src="./assets/images/mohan-muruge.jpg"
+          className="comment-section__avatar top"
+          src={avatar}
           alt="avatar"
         />
-
-        <label
-          className="form__comment"
-          name="comment"
-          id="comment"
-          htmlFor="comment"
-        ></label>
         <textarea
           className="form__textarea"
           type="text"
@@ -39,7 +39,14 @@ const Comments = (props) => {
           id="comment"
         ></textarea>
 
-        <button className="form__button">COMMENT</button>
+        <button className="form__button">
+          COMMENT
+          <img
+            className="form__icon"
+            src={commentIcon}
+            alt="comment Icon"
+          ></img>
+        </button>
       </form>
       {commentArray}
     </div>

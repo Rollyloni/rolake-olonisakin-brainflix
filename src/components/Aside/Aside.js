@@ -14,7 +14,12 @@ const Aside = (props) => {
       ></CardDetails>
     );
   });
-  return <section>{videoList}</section>;
+  return (
+    <section>
+      <h3> NEXT VIDEOS</h3>
+      {videoList}
+    </section>
+  );
 };
 
 export default Aside;

@@ -6,7 +6,6 @@ import dataArray from "./components/assets/data/video-details.json";
 import cardData from "./components/assets/data/videos.json";
 
 import React, { Component } from "react";
-console.log(dataArray);
 
 class App extends Component {
   state = {
