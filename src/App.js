@@ -1,11 +1,12 @@
-import Aside from "./components/Aside";
+import Aside from "./components/Aside/Aside";
 import "./App.css";
-import Header from "./components/Header";
-import Hero from "./components/Hero";
+import Header from "./components/Header/Header";
+import Hero from "./components/Hero/Hero";
 import dataArray from "./components/assets/data/video-details.json";
 import cardData from "./components/assets/data/videos.json";
 
 import React, { Component } from "react";
+console.log(dataArray);
 
 class App extends Component {
   state = {

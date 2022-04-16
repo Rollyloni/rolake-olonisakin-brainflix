@@ -1,9 +1,8 @@
 import React from "react";
-import dataArray from "./assets/data/video-details.json";
-import avatar from "./assets/Images/Mohan-muruge.jpg";
+import avatar from "../assets/Images/Mohan-muruge.jpg";
 
-const Comments = () => {
-  const commentArray = dataArray[0].comments.map((comment, index) => {
+const Comments = (props) => {
+  const commentArray = props.comments.map((comment, index) => {
     return (
       <section key={index}>
         <div>

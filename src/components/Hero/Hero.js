@@ -1,11 +1,20 @@
-import viewIcon from "./assets/Icons/views.svg";
-import likesIcon from "./assets/Icons/likes.svg";
-import "../components/Hero.scss";
-import Comments from "./Comments";
+import viewIcon from "../assets/Icons/views.svg";
+import likesIcon from "../assets/Icons/likes.svg";
+import "../Hero/Hero.scss";
+import Comments from "../Comments/Comments";
 
 const Hero = (props) => {
-  const { image, video, title, channel, timestamp, views, likes, description } =
-    props.pageInfo;
+  const {
+    image,
+    video,
+    title,
+    channel,
+    timestamp,
+    views,
+    likes,
+    description,
+    comments,
+  } = props.pageInfo;
   return (
     <div className="hero-section">
       <section className="hero-section">
@@ -45,7 +54,7 @@ const Hero = (props) => {
       <section>
         <p className="hero-section__description">{description}</p>
       </section>
-      <Comments />
+      <Comments comments={comments} />
     </div>
   );
 };

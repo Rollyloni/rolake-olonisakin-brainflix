@@ -1,5 +1,5 @@
-import "../components/Aside.scss";
-import CardDetails from "./CardDetails";
+import "../Aside/Aside.scss";
+import CardDetails from "../CardDetails/CardDetails";
 
 const Aside = (props) => {
   const videoList = props.selectedPage.map((object) => {
