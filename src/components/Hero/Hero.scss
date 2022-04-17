@@ -17,32 +17,54 @@
     padding: 0 3rem;
     background-color: black;
   }
-}
-.hero-section__heading {
-  font-size: 2.5rem;
-  margin-left: 1.5rem;
-  padding-bottom: 2rem;
-  border-bottom: 2px solid #e1e1e1;
-  margin-bottom: 0;
 
-  @include tablet {
-    border-bottom: none;
-    padding-bottom: 0;
-    font-size: 2.8rem;
-  }
-}
-.hero-section__channel {
-  font-weight: 600;
-  font-size: 1.4rem;
-  margin-left: 1.4rem;
-  margin-top: 0;
-
-  @include tablet {
+  &__heading {
+    font-size: 2.5rem;
+    margin-left: 1.5rem;
+    padding-bottom: 2rem;
+    border-bottom: 2px solid #e1e1e1;
     margin-bottom: 0;
-    margin-top: 2rem;
-    font-size: 1.2rem;
+
+    @include tablet {
+      border-bottom: none;
+      padding-bottom: 0;
+      font-size: 2.8rem;
+    }
+  }
+
+  &__channel {
+    font-weight: 600;
+    font-size: 1.4rem;
+    margin-left: 1.4rem;
+    margin-top: 0;
+
+    @include tablet {
+      margin-bottom: 0;
+      margin-top: 2rem;
+      font-size: 1.2rem;
+    }
+  }
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__description {
+    margin: 1.5rem;
+    line-height: 2.2rem;
+    font-size: 1.4rem;
+    border-top: 2px solid #e1e1e1;
+    padding: 1.6rem 0;
+
+    @include tablet {
+      padding: 2rem 0;
+      line-height: 2.6rem;
+    }
   }
 }
+
 .hero-section__likes,
 .hero-section__views,
 .hero-section__timestamp {
@@ -57,23 +79,7 @@
     font-size: 1.2rem;
   }
 }
-.hero-section__container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.hero-section__description {
-  margin: 1.5rem;
-  line-height: 2.2rem;
-  font-size: 1.4rem;
-  border-top: 2px solid #e1e1e1;
-  padding: 1.6rem 0;
 
-  @include tablet {
-    padding: 2rem 0;
-    line-height: 2.6rem;
-  }
-}
 .hero-section__viewIcon,
 .hero-section__likesIcon {
   margin-right: 1rem;
@@ -94,5 +100,11 @@
 .hero-div {
   @include tablet {
     padding: 0 3rem;
+  }
+
+  @include desktop {
+    width: 80%;
+    margin-right: 0;
+    padding-right: 0;
   }
 }

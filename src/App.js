@@ -26,8 +26,24 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-        <Hero pageInfo={this.state.currentPage} />
-        <Aside selectedPage={heroPage} onCardClick={this.handleCardSelect} />
+        <section className="hero-section">
+          <video
+            width="108%"
+            height="40%"
+            controls
+            poster={this.state.currentPage.image}
+          >
+            <source src={this.state.currentPage.video} type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </section>
+        <section className="app-section">
+          <Hero
+            pageInfo={this.state.currentPage}
+            className="app-section__hero"
+          />
+          <Aside selectedPage={heroPage} onCardClick={this.handleCardSelect} />
+        </section>
       </div>
     );
   }

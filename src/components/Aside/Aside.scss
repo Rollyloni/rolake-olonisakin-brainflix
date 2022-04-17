@@ -4,6 +4,12 @@
   }
 }
 
+@mixin desktop {
+  @media (min-width: 1280px) {
+    @content;
+  }
+}
+
 h3 {
   margin-left: 2rem;
   color: #afafaf;
@@ -11,5 +17,17 @@ h3 {
 
   @include tablet {
     padding: 0 3rem;
+  }
+
+  @include desktop {
+    margin-left: 1.5rem;
+    padding-left: 0;
+  }
+}
+.videos-div {
+  @include desktop {
+    margin-left: 0;
+    padding-left: 0;
+    border-left: 2px solid #e1e1e1;
   }
 }

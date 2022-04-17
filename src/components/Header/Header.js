@@ -21,7 +21,6 @@ function Header() {
 
         <input type="text" placeholder="Search"></input>
       </section>
-
       <button>
         <img
           className="header-section__button--logo"

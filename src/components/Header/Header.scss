@@ -18,35 +18,60 @@ header {
   }
 }
 
-.header-section__logo {
-  width: 12rem;
-  margin: 2rem 12rem;
+.header-section {
+  &__logo {
+    width: 12rem;
+    margin: 2rem 0;
+    margin-left: 10rem;
 
-  @include tablet {
-    margin: 1rem 3rem;
-    width: 15rem;
-    margin-right: 0;
+    @include tablet {
+      margin: 1rem 3rem;
+      width: 15rem;
+      margin-right: 0;
+    }
+  }
+
+  &__avatar {
+    width: 65px;
+    height: 60px;
+    border-radius: 50%;
+
+    @include tablet {
+      bottom: 0;
+      right: 0;
+      margin-top: 2rem;
+    }
+  }
+
+  &__div {
+    display: flex;
+    position: relative;
+  }
+
+  &__search {
+    position: absolute;
+    width: 1.5rem;
+    top: 0;
+    left: 0;
+    margin-left: 3rem;
+    margin-top: 1.5rem;
+    margin-bottom: 2rem;
+
+    @include tablet {
+      margin-top: 3.2rem;
+    }
+  }
+
+  &__button--logo {
+    width: 2rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-left: 1rem;
+    margin-top: 1.2rem;
   }
 }
 
-.header-section__avatar {
-  position: relative;
-  width: 65px;
-  height: 60px;
-  border-radius: 50%;
-  top: 0;
-  right: 0;
-
-  @include tablet {
-    bottom: 0;
-    right: 0;
-    margin-top: 2rem;
-  }
-}
-.header-section__div {
-  display: flex;
-  position: relative;
-}
 input {
   width: 80%;
   font-size: 1.1rem;
@@ -61,20 +86,6 @@ input {
     height: 4.5rem;
   }
 }
-.header-section__search {
-  position: absolute;
-  width: 1.5rem;
-  top: 0;
-  left: 0;
-  margin-left: 3rem;
-  margin-top: 1.5rem;
-  margin-bottom: 2rem;
-
-  @include tablet {
-    margin-top: 3.2rem;
-  }
-}
-
 button {
   width: 95vw;
   color: white;
@@ -91,12 +102,4 @@ button {
     width: 20%;
     padding: 1.4rem 0;
   }
-}
-.header-section__button--logo {
-  width: 2rem;
-  position: absolute;
-  top: 0;
-  left: 0;
-  margin-left: 1rem;
-  margin-top: 1.2rem;
 }

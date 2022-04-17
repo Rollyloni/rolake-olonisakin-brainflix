@@ -15,7 +15,7 @@ const Aside = (props) => {
     );
   });
   return (
-    <section>
+    <section className="videos-div">
       <h3> NEXT VIDEOS</h3>
       {videoList}
     </section>
