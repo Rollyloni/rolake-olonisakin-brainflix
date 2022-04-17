@@ -1,3 +1,15 @@
+@mixin tablet {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: 1280px) {
+    @content;
+  }
+}
+
 form {
   border-bottom: 2px solid #e1e1e1;
   margin-bottom: 1rem;
@@ -17,6 +29,12 @@ form {
   border-radius: 0.5rem;
   margin: 1.5rem 5.5rem;
   position: relative;
+
+  @include tablet {
+    width: 40%;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
 }
 
 .form__icon {
@@ -39,10 +57,9 @@ textarea {
   margin-top: 0.5rem;
   margin-left: 5.5rem;
 
-  // @include tablet {
-  //   width: 90%;
-  //   height: 10rem;
-  // }
+  @include tablet {
+    height: 4rem;
+  }
 }
 ::placeholder {
   color: black;
@@ -105,7 +122,7 @@ textarea {
     font-size: 1.3rem;
     line-height: 1.8rem;
     margin: 0;
-    margin-left: 11.6rem;
+    margin-right: 2rem;
 
     // @include tablet {
     //   margin-left: 17rem;
@@ -130,4 +147,19 @@ textarea {
 }
 .top {
   position: absolute;
+}
+
+.comment-section__count {
+  margin-left: 1.4rem;
+  font-weight: 600;
+  font-size: 1.4rem;
+  padding-bottom: 1rem;
+}
+
+.comment-section__styling {
+  @include tablet {
+    display: flex;
+    align-items: center;
+    padding-bottom: 2rem;
+  }
 }

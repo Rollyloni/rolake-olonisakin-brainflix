@@ -16,9 +16,9 @@ const Hero = (props) => {
     comments,
   } = props.pageInfo;
   return (
-    <div className="hero-section">
+    <div className="hero-div">
       <section className="hero-section">
-        <video width="100%" height="40%" controls poster={image}>
+        <video width="108%" height="40%" controls poster={image}>
           <source src={video} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
@@ -26,27 +26,31 @@ const Hero = (props) => {
       <h1 className="hero-section__heading">{title}</h1>
 
       <section className="hero-section__container">
-        <article>
-          <p className="hero-section__channel">{channel}</p>
+        <article className="hero-section__div">
+          <p className="hero-section__channel"> By {channel}</p>
           <span className="hero-section__timestamp">{timestamp}</span>
         </article>
 
         <article className="hero-section__icon--div">
           <>
-            <img
-              className="hero-section__viewIcon"
-              src={viewIcon}
-              alt="views Icon"
-            ></img>
-            <span className="hero-section__views">{views}</span>
+            <p className="hero-section__views">
+              <img
+                className="hero-section__viewIcon"
+                src={viewIcon}
+                alt="views Icon"
+              ></img>
+              {views}
+            </p>
           </>
           <>
-            <img
-              className="hero-section__likesIcon"
-              src={likesIcon}
-              alt="likes Icon"
-            ></img>
-            <span className="hero-section__likes">{likes}</span>
+            <p className="hero-section__likes">
+              <img
+                className="hero-section__likesIcon"
+                src={likesIcon}
+                alt="likes Icon"
+              ></img>
+              {likes}
+            </p>
           </>
         </article>
       </section>

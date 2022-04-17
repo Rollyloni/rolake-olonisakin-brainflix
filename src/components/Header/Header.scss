@@ -1,12 +1,47 @@
+@mixin tablet {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: 1280px) {
+    @content;
+  }
+}
+
+header {
+  @include tablet {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 2rem;
+  }
+}
+
 .header-section__logo {
   width: 12rem;
   margin: 2rem 12rem;
+
+  @include tablet {
+    margin: 1rem 3rem;
+    width: 15rem;
+    margin-right: 0;
+  }
 }
 
 .header-section__avatar {
+  position: relative;
   width: 65px;
   height: 60px;
   border-radius: 50%;
+  top: 0;
+  right: 0;
+
+  @include tablet {
+    bottom: 0;
+    right: 0;
+    margin-top: 2rem;
+  }
 }
 .header-section__div {
   display: flex;
@@ -19,6 +54,12 @@ input {
   padding: 1.3rem 3rem;
   border-radius: 0.4rem;
   border-color: #e1e1e1;
+
+  @include tablet {
+    width: 100%;
+    margin-top: 1.6rem;
+    height: 4.5rem;
+  }
 }
 .header-section__search {
   position: absolute;
@@ -28,6 +69,10 @@ input {
   margin-left: 3rem;
   margin-top: 1.5rem;
   margin-bottom: 2rem;
+
+  @include tablet {
+    margin-top: 3.2rem;
+  }
 }
 
 button {
@@ -40,13 +85,18 @@ button {
   border-color: #0095ff;
   margin: 1.5rem 2rem;
   border-radius: 0.5rem;
+  position: relative;
+
+  @include tablet {
+    width: 20%;
+    padding: 1.4rem 0;
+  }
 }
 .header-section__button--logo {
   width: 2rem;
   position: absolute;
-  margin-top: 2.8rem;
-  margin-left: 2.8rem;
-}
-.header-section__button {
-  position: relative;
+  top: 0;
+  left: 0;
+  margin-left: 1rem;
+  margin-top: 1.2rem;
 }

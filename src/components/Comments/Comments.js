@@ -23,30 +23,32 @@ const Comments = (props) => {
 
   return (
     <div>
-      <p>3 Comments</p>
+      <p className="comment-section__count">3 Comments</p>
       <form className="form__name">
         <p className="comment-section__header">JOIN THE CONVERSATION</p>
-        <img
-          className="comment-section__avatar top"
-          src={avatar}
-          alt="avatar"
-        />
-        <textarea
-          className="form__textarea"
-          type="text"
-          placeholder="Add a new comment"
-          name="comment"
-          id="comment"
-        ></textarea>
-
-        <button className="form__button">
-          COMMENT
+        <div className="comment-section__styling">
           <img
-            className="form__icon"
-            src={commentIcon}
-            alt="comment Icon"
-          ></img>
-        </button>
+            className="comment-section__avatar top"
+            src={avatar}
+            alt="avatar"
+          />
+          <textarea
+            className="form__textarea"
+            type="text"
+            placeholder="Add a new comment"
+            name="comment"
+            id="comment"
+          ></textarea>
+
+          <button className="form__button">
+            COMMENT
+            <img
+              className="form__icon"
+              src={commentIcon}
+              alt="comment Icon"
+            ></img>
+          </button>
+        </div>
       </form>
       {commentArray}
     </div>

@@ -18,20 +18,23 @@ function Header() {
           src={searchIcon}
           alt="search icon"
         ></img>
+
         <input type="text" placeholder="Search"></input>
-        <img
-          className="header-section__avatar"
-          src={avatar}
-          alt="avatar icon"
-        ></img>
       </section>
+
+      <button>
+        <img
+          className="header-section__button--logo"
+          src={uploadIcon}
+          alt="upload icon"
+        ></img>
+        UPLOAD
+      </button>
       <img
-        className="header-section__button--logo"
-        src={uploadIcon}
-        alt="upload icon"
+        className="header-section__avatar"
+        src={avatar}
+        alt="avatar icon"
       ></img>
-      <section className="header-section__button"></section>
-      <button>UPLOAD</button>
     </header>
   );
 }

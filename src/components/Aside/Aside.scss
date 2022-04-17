@@ -1,5 +1,15 @@
+@mixin tablet {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
 h3 {
   margin-left: 2rem;
   color: #afafaf;
   font-size: 1.4rem;
+
+  @include tablet {
+    padding: 0 3rem;
+  }
 }
