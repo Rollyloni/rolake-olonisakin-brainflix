@@ -4,11 +4,26 @@ import "../Hero/Hero.scss";
 import Comments from "../Comments/Comments";
 
 const Hero = (props) => {
-  const { title, channel, views, likes, timestamp, description, comments } =
-    props.pageInfo;
+  const {
+    title,
+    channel,
+    views,
+    image,
+    video,
+    likes,
+    timestamp,
+    description,
+    comments,
+  } = props.pageInfo;
 
   return (
     <>
+      <section className="hero-section">
+        <video width="108%" height="40%" controls poster={image}>
+          <source src={video} type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </section>
       <div className="hero-div">
         <main>
           <h1 className="hero-section__heading">{title}</h1>

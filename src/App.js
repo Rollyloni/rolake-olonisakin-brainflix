@@ -4,8 +4,9 @@ import Header from "./components/Header/Header";
 import Hero from "./components/Hero/Hero";
 import dataArray from "./components/assets/data/video-details.json";
 import cardData from "./components/assets/data/videos.json";
-
 import React, { Component } from "react";
+
+import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
 
 class App extends Component {
   state = {
@@ -13,11 +14,14 @@ class App extends Component {
     videoNav: cardData,
   };
 
-  handleCardSelect = (id) => {
-    this.setState({
-      currentPage: dataArray.find((video) => video.id === id),
-    });
-  };
+  componentDidMount() {
+    this.handleCardSelect = (id) => {
+      this.setState({
+        currentPage: dataArray.find((video) => video.id === id),
+      });
+    };
+  }
+
   render() {
     const heroPage = this.state.videoNav.filter(
       (page) => page.id !== this.state.currentPage.id
@@ -25,25 +29,31 @@ class App extends Component {
 
     return (
       <div className="App">
-        <Header />
-        <section className="hero-section">
-          <video
-            width="108%"
-            height="40%"
-            controls
-            poster={this.state.currentPage.image}
-          >
-            <source src={this.state.currentPage.video} type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-        </section>
-        <section className="app-section">
-          <Hero
-            pageInfo={this.state.currentPage}
-            className="app-section__hero"
-          />
-          <Aside selectedPage={heroPage} onCardClick={this.handleCardSelect} />
-        </section>
+        <BrowserRouter>
+          <Header />
+
+          <section className="app-section">
+            <Switch>
+              <Route
+                path="/home"
+                render={() => {
+                  return (
+                    <>
+                      <Hero
+                        pageInfo={this.state.currentPage}
+                        className="app-section__hero"
+                      />
+                      <Aside
+                        selectedPage={heroPage}
+                        onCardClick={this.handleCardSelect}
+                      />
+                    </>
+                  );
+                }}
+              />
+            </Switch>
+          </section>
+        </BrowserRouter>
       </div>
     );
   }
