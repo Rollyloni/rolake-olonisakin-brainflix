@@ -1,19 +1,17 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import "../CardDetails/CardDetails.scss";
 
 const CardDetails = (props) => {
-  const { image, title, id, channel, onCardClick } = props;
-  const handleClick = (event) => {
-    onCardClick(id);
-  };
-
   return (
-    <article onClick={handleClick} className="card">
-      <img className="card__images" src={image} alt="video avatar" />
-      <div className="card__div">
-        <p className="card__title">{title} </p>
-        <p className="card__channel">{channel} </p>
-      </div>
+    <article className="card" key={props.id}>
+      <NavLink to={`/videos/${props.id}`}>
+        <img className="card__images" src={props.image} alt="video avatar" />
+        <div className="card__div">
+          <p className="card__title">{props.title} </p>
+          <p className="card__channel">{props.channel} </p>
+        </div>
+      </NavLink>
     </article>
   );
 };
