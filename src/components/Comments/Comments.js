@@ -18,7 +18,7 @@ const Comments = (props) => {
                 ></img>
                 <div className="comment-section__div">
                   <p className="comment-section__name">{comment.name}</p>
-                  <p className="comment-section__date">{comment.timestamp} </p>
+                  <p className="comment-section__date">{comment.timestamp}</p>
                 </div>
                 <p className="comment-section__text">{comment.comment} </p>
               </section>

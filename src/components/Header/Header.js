@@ -24,14 +24,16 @@ function Header() {
 
         <input type="text" placeholder="Search"></input>
       </section>
-      <button>
-        <img
-          className="header-section__button--logo"
-          src={uploadIcon}
-          alt="upload icon"
-        ></img>
-        UPLOAD
-      </button>
+      <Link to="/upload">
+        <button>
+          <img
+            className="header-section__button--logo"
+            src={uploadIcon}
+            alt="upload icon"
+          ></img>
+          UPLOAD
+        </button>
+      </Link>
       <img
         className="header-section__avatar"
         src={avatar}
