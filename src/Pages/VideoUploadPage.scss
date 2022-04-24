@@ -18,6 +18,10 @@
   @include tablet {
     width: 60%;
   }
+
+  @include desktop {
+    width: 50%;
+  }
 }
 .video__heading {
   margin-left: 2rem;
@@ -29,6 +33,8 @@
   @include tablet {
     padding: 3rem 0;
     border-bottom: 2px solid #e1e1e1;
+    font-weight: 700;
+    font-size: 3.2rem;
   }
 }
 .video__title {
@@ -37,6 +43,12 @@
   color: #afafaf;
   font-size: 1.2rem;
   margin-bottom: 0.5rem;
+
+  @include desktop {
+    font-size: 1rem;
+    margin-top: 0;
+    display: block;
+  }
 }
 .video__input,
 .video__textarea {
@@ -44,11 +56,23 @@
   margin-bottom: 2rem;
   font-family: "AvenirNext LT Pro", "Times New Roman", Times, serif;
   font-size: 1.6rem;
+
+  @include desktop {
+    font-size: 1.2rem;
+    margin-top: 0;
+  }
 }
-button {
+
+.publish__button {
+  padding-right: 2.2rem;
   margin-right: 0;
   color: white;
+
+  @include desktop {
+    width: 15%;
+  }
 }
+
 .video__textarea {
   margin-left: 2rem;
 
@@ -71,6 +95,7 @@ form {
 
   @include tablet {
     border-bottom: 2px solid #e1e1e1;
+    padding: 0 4rem;
   }
 }
 
@@ -81,5 +106,22 @@ form {
   @include tablet {
     display: flex;
     justify-content: flex-end;
+  }
+}
+
+.video__div {
+  @include desktop {
+    display: flex;
+  }
+}
+.video__title {
+  @include desktop {
+    margin-top: 0;
+    display: block;
+  }
+}
+.test {
+  @include desktop {
+    width: 150rem;
   }
 }
