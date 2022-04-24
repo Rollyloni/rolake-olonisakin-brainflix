@@ -7,24 +7,28 @@ const Comments = (props) => {
 
   return (
     <div>
-      {commentArray
-        ? commentArray.map((comment) => {
-            return (
-              <section key={comment.id} className="comment-section__container">
-                <img
-                  src={avatar}
-                  alt="comment avatar"
-                  className="comment-section__avatar"
-                ></img>
-                <div className="comment-section__div">
-                  <p className="comment-section__name">{comment.name}</p>
-                  <p className="comment-section__date">{comment.timestamp}</p>
-                </div>
-                <p className="comment-section__text">{comment.comment} </p>
-              </section>
-            );
-          })
-        : null}
+      {commentArray ? (
+        commentArray.map((comment) => {
+          return (
+            <section key={comment.id} className="comment-section__container">
+              <img
+                src={avatar}
+                alt="comment avatar"
+                className="comment-section__avatar"
+              ></img>
+              <div className="comment-section__div">
+                <p className="comment-section__name">{comment.name}</p>
+                <p className="comment-section__date">
+                  {new Date(comment.timestamp).toLocaleDateString("en-US")}
+                </p>
+              </div>
+              <p className="comment-section__text">{comment.comment} </p>
+            </section>
+          );
+        })
+      ) : (
+        <p>Page Loading...</p>
+      )}
     </div>
   );
 };

@@ -3,6 +3,7 @@ import axios from "axios";
 import HeroVideo from "../components/Hero/HeroVideo";
 import Hero from "../components/Hero/Hero";
 import Aside from "../components/Aside/Aside";
+import "../App.scss";
 
 class HomePage extends Component {
   state = {
@@ -58,11 +59,13 @@ class HomePage extends Component {
 
   render() {
     return (
-      <div>
+      <>
         <HeroVideo data={this.state.currentPage} />
-        <Hero data={this.state.currentPage} />
-        <Aside VideoNavData={this.state.videoNav} />
-      </div>
+        <div className="app-section ">
+          <Hero data={this.state.currentPage} />
+          <Aside VideoNavData={this.state.videoNav} />
+        </div>
+      </>
     );
   }
 }

@@ -15,7 +15,7 @@ const Hero = (props) => {
             <article className="hero-section__div">
               <p className="hero-section__channel"> By {props.data.channel}</p>
               <span className="hero-section__timestamp">
-                {props.data.timestamp}
+                {new Date(props.data.timestamp).toLocaleDateString("en-US")}
               </span>
             </article>
 

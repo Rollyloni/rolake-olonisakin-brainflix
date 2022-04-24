@@ -5,19 +5,21 @@ const Aside = (props) => {
   return (
     <section className="videos-div">
       <h3> NEXT VIDEOS</h3>
-      {props.VideoNavData
-        ? props.VideoNavData.map((object) => {
-            return (
-              <CardDetails
-                key={object.id}
-                id={object.id}
-                image={object.image}
-                title={object.title}
-                channel={object.channel}
-              ></CardDetails>
-            );
-          })
-        : null}
+      {props.VideoNavData ? (
+        props.VideoNavData.map((object) => {
+          return (
+            <CardDetails
+              key={object.id}
+              id={object.id}
+              image={object.image}
+              title={object.title}
+              channel={object.channel}
+            ></CardDetails>
+          );
+        })
+      ) : (
+        <p>Page Loading...</p>
+      )}
     </section>
   );
 };

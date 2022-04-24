@@ -1,0 +1,85 @@
+@mixin tablet {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: 1280px) {
+    @content;
+  }
+}
+
+.video__img {
+  width: 96%;
+  border-radius: 0.4rem;
+  margin-left: 2rem;
+
+  @include tablet {
+    width: 60%;
+  }
+}
+.video__heading {
+  margin-left: 2rem;
+  line-break: 1.8rem;
+  font-size: 2.6rem;
+  font-weight: 600;
+  border-top: 2px solid #e1e1e1;
+
+  @include tablet {
+    padding: 3rem 0;
+    border-bottom: 2px solid #e1e1e1;
+  }
+}
+.video__title {
+  margin-left: 2rem;
+  font-weight: 600;
+  color: #afafaf;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+.video__input,
+.video__textarea {
+  width: 96%;
+  margin-bottom: 2rem;
+  font-family: "AvenirNext LT Pro", "Times New Roman", Times, serif;
+  font-size: 1.6rem;
+}
+button {
+  margin-right: 0;
+  color: white;
+}
+.video__textarea {
+  margin-left: 2rem;
+
+  @include tablet {
+    height: 8rem;
+  }
+}
+.cancel__button {
+  text-align: center;
+  color: #0095ff;
+  margin-top: 3rem;
+
+  @include tablet {
+    margin-left: 3rem;
+    font-size: 1.4rem;
+  }
+}
+form {
+  border-bottom: none;
+
+  @include tablet {
+    border-bottom: 2px solid #e1e1e1;
+  }
+}
+
+.video__input {
+  padding-left: 1rem;
+}
+.video__button--div {
+  @include tablet {
+    display: flex;
+    justify-content: flex-end;
+  }
+}

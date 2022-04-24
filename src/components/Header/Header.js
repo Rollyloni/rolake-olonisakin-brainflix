@@ -3,18 +3,19 @@ import brnflixLogo from "../assets/logo/BrainFlix-logo.svg";
 import searchIcon from "../assets/Icons/search.svg";
 import avatar from "../assets/Images/Mohan-muruge.jpg";
 import uploadIcon from "../assets/Icons/upload.svg";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import "../CardDetails/CardDetails.scss";
 
 function Header() {
   return (
     <header className="header-section">
-      <Link to="/">
+      <NavLink to="/">
         <img
           className="header-section__logo"
           src={brnflixLogo}
           alt="logo for brainflix"
         ></img>
-      </Link>
+      </NavLink>
       <section className="header-section__div">
         <img
           className="header-section__search"
@@ -24,7 +25,7 @@ function Header() {
 
         <input type="text" placeholder="Search"></input>
       </section>
-      <Link to="/upload">
+      <NavLink to="/upload" className="nav__link">
         <button>
           <img
             className="header-section__button--logo"
@@ -33,7 +34,7 @@ function Header() {
           ></img>
           UPLOAD
         </button>
-      </Link>
+      </NavLink>
       <img
         className="header-section__avatar"
         src={avatar}
