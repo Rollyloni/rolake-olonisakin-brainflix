@@ -21,16 +21,13 @@ class HomePage extends Component {
       return this.state.currentPage.id;
     });
 
-    axios
-      .get(
-        "https://project-2-api.herokuapp.com/videos?api_key=b24f35ee-ae2e-4b80-bfb0-6b4836edbf96"
-      )
-      .then((response) => {
-        this.setState({
-          videoNav: response.data,
-        });
-        return this.state.videoNav.id;
+    axios.get("http://localhost:8080/videoList").then((response) => {
+      this.setState({
+        videoNav: response.data,
       });
+
+      return this.state.videoNav.id;
+    });
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -42,9 +39,7 @@ class HomePage extends Component {
       const videoToLoadId =
         newVideoId !== undefined ? newVideoId : firstVideoId;
       axios
-        .get(
-          `https://project-2-api.herokuapp.com/videos/${videoToLoadId}?api_key=b24f35ee-ae2e-4b80-bfb0-6b4836edbf96`
-        )
+        .get(`http://localhost:8080/videos/${videoToLoadId}`)
         .then((response) => {
           this.setState({
             currentPage: response.data,
@@ -55,12 +50,15 @@ class HomePage extends Component {
   }
 
   render() {
+    const filteredVideo = this.state.videoNav.filter(
+      (page) => page.id !== this.state.currentPage.id
+    );
     return (
       <>
         <HeroVideo data={this.state.currentPage} />
         <div className="app-section ">
           <Hero data={this.state.currentPage} />
-          <Aside VideoNavData={this.state.videoNav} />
+          <Aside VideoNavData={filteredVideo} />
         </div>
       </>
     );

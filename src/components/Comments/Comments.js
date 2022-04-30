@@ -1,5 +1,5 @@
 import React from "react";
-import avatar from "../assets/Images/Mohan-muruge.jpg";
+import avatar from "../assets/Images/pngkey.com-ega-png-2332677.png";
 import "../Comments/Comments.scss";
 
 const Comments = (props) => {

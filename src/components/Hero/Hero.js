@@ -49,7 +49,7 @@ const Hero = (props) => {
             </p>
           </section>
         </main>
-        <Form />
+        <Form comments={props.data.comments} />
         <Comments comments={props.data.comments} />
       </div>
     </>
