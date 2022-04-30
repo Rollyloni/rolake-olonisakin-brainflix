@@ -12,17 +12,14 @@ class HomePage extends Component {
   };
 
   componentDidMount() {
-    axios
-      .get(
-        "https://project-2-api.herokuapp.com/videos/84e96018-4022-434e-80bf-000ce4cd12b8?api_key=b24f35ee-ae2e-4b80-bfb0-6b4836edbf96"
-      )
-      .then((response) => {
-        this.setState({
-          currentPage: response.data,
-        });
-
-        return this.state.currentPage.id;
+    axios.get("http://localhost:8080/videos").then((response) => {
+      console.log(response.data);
+      this.setState({
+        currentPage: response.data[0],
       });
+
+      return this.state.currentPage.id;
+    });
 
     axios
       .get(

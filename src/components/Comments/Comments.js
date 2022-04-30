@@ -8,9 +8,9 @@ const Comments = (props) => {
   return (
     <div>
       {commentArray ? (
-        commentArray.map((comment) => {
+        commentArray.map((comment, index) => {
           return (
-            <section key={comment.id} className="comment-section__container">
+            <section key={index} className="comment-section__container">
               <img
                 src={avatar}
                 alt="comment avatar"
