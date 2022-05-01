@@ -27,6 +27,10 @@
     width: 32%;
     height: 10rem;
     border-radius: 0.5rem;
+
+    @include desktop {
+      height: 7rem;
+    }
   }
 
   &__title {
@@ -37,11 +41,22 @@
     @include tablet {
       width: 60%;
     }
+
+    @include desktop {
+      font-size: 1rem;
+      line-height: 1rem;
+      width: 120%;
+    }
   }
 
   &__channel {
     font-size: 1.3rem;
-    line-height: 1.8rem;
+    line-height: 1.2rem;
+
+    @include desktop {
+      font-size: 1rem;
+      line-height: 1rem;
+    }
   }
 
   &__div {

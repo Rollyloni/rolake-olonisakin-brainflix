@@ -24,6 +24,11 @@ function Header() {
         ></img>
 
         <input type="text" placeholder="Search"></input>
+        <img
+          className="header-section__avatar"
+          src={avatar}
+          alt="avatar icon"
+        ></img>
       </section>
       <NavLink to="/upload" className="nav__link">
         <button>
@@ -35,11 +40,6 @@ function Header() {
           UPLOAD
         </button>
       </NavLink>
-      <img
-        className="header-section__avatar"
-        src={avatar}
-        alt="avatar icon"
-      ></img>
     </header>
   );
 }

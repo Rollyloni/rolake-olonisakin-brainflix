@@ -13,7 +13,6 @@ class HomePage extends Component {
 
   componentDidMount() {
     axios.get("http://localhost:8080/videos").then((response) => {
-      console.log(response.data);
       this.setState({
         currentPage: response.data[0],
       });

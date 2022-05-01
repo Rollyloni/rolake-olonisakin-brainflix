@@ -3,6 +3,7 @@ import thumbnailImg from "../components/assets/Images/Upload-video-preview.jpg";
 import "./VideoUploadPage.scss";
 import uploadIcon from "../components/assets/Icons/publish.svg";
 import axios from "axios";
+import { NavLink } from "react-router-dom";
 
 const VideoUploadPage = () => {
   function handleSubmit(event) {
@@ -12,7 +13,6 @@ const VideoUploadPage = () => {
       title: event.target.title.value,
       description: event.target.description.value,
     };
-    console.log(videoObj);
 
     axios.post("http://localhost:8080/videos", videoObj);
     event.target.reset();
@@ -63,7 +63,10 @@ const VideoUploadPage = () => {
           ></img>
           PUBLISH
         </button>
-        <p className="cancel__button">CANCEL</p>
+
+        <NavLink to="/upload" className="nav__link">
+          <p className="cancel__button">CANCEL</p>
+        </NavLink>
       </div>
     </form>
   );
