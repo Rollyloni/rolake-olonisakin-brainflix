@@ -30,11 +30,11 @@ class HomePage extends Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    const newVideoId = this.props.match.params.videoID;
+    const newVideoId = this.props.match.params.videoId;
 
     const firstVideoId = this.state.currentPage.id;
 
-    if (newVideoId !== prevProps.match.params.videoID) {
+    if (newVideoId !== prevProps.match.params.videoId) {
       const videoToLoadId =
         newVideoId !== undefined ? newVideoId : firstVideoId;
       axios
